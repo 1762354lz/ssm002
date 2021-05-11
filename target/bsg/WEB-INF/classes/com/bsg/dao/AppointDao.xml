@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bsg.dao.AppointDao">
+<select id="find" resultType="Appoint">
+    select student_id,book_id,appoint_time from appointment
+    where student_id=#{personid} and book_id=#{bookid}
+
+</select>
+    <insert id="add">
+        insert into appointment (book_id,student_id) values (#{bookid},#{personid})
+    </insert>
+</mapper>
